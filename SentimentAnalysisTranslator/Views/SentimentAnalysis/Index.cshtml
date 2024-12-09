@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Sentiment Analysis";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form method="post" asp-controller="SentimentAnalysis" asp-action="AnalyzeSentiment">
+    <textarea name="text" rows="4" cols="50" placeholder="Enter text to analyze sentiment..."></textarea><br />
+    <button type="submit" class="btn btn-info">Analyze Sentiment</button>
+</form>
+
+<div>
+    @if (ViewBag.Message != null)
+    {
+        <h3>@ViewBag.Message</h3>
+    }
+</div>
